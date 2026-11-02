@@ -1,0 +1,29 @@
+model: Qwen/Qwen2.5-1.5B-Instruct   
+dtype: float16                     
+
+gpu_index: 0
+knob: auto            
+lock_mode: range      
+min_clock_mhz: 210   
+cap_fractions: [0.5, 0.6, 0.7, 0.8, 0.9]
+max_batch: 8         
+interval_s: 1.0       
+episode_s: 300        
+tpot_factor: 1.25     
+ttft_factor: 1.0      
+slo_weight: 4.0      
+headroom: 0.10        
+sim_noise: 0.03      
+workload:
+  prompt_median: 128  
+  prompt_sigma: 0.6
+  prompt_min: 16
+  prompt_max: 512
+  output_median: 64    
+  output_sigma: 0.6
+  output_min: 8
+  output_max: 256
+  regimes:             
+    - {name: low,    load: 0.08, mean_dwell_s: 40}
+    - {name: normal, load: 0.35, mean_dwell_s: 40}
+    - {name: burst,  load: 0.80, mean_dwell_s: 20}
