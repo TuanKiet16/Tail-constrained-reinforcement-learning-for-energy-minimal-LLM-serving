@@ -1,8 +1,0 @@
-numpy>=1.26
-gymnasium>=1.0
-stable-baselines3>=2.4
-transformers>=5.0
-nvidia-ml-py>=12.535
-matplotlib>=3.8
-pyyaml>=6.0
-pytest>=8.0
